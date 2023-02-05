@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<style>input[type=file]::file-selector-button {
+    margin-right: 20px;
+    border: none;
+    background: #084cdf;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+  }
+  
+  input[type=file]::file-selector-button:hover {
+    background: #0d45a5;
+  }
+
+  input[type=submit]::file-selector-button {
+    margin-right: 20px;
+    border: none;
+    background: #084cdf;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+  }
+  
+  input[type=submit]::file-selector-button:hover {
+    background: #0d45a5;
+  }
+
+</style>
+    
+
+
+
+   
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Drishti</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md fixed-top navbar-shrink py-3" id="mainNav">
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="/"><span>Drishti</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="oct.html">Missing people</a></li>
+                  
+                    <li class="nav-item"><a class="nav-link active" href="contribute.html">Classfication</a></li>
+                    <li class="nav-item"></li>
+                    <li class="nav-item"></li>
+                    <li class="nav-item"><a class="nav-link" href="api.html">Integration</a></li>
+                    <li class="nav-item"></li>
+                    <li class="nav-item"><a class="nav-link" href="contacts.html">Contact</a></li>
+             
+            </div>
+        </div>
+    </nav>
+    <section class="py-5 mt-5">
+        <div class="container py-4 py-xl-5">
+            <div class="row gy-4 gy-md-0">
+                <div class="col-md-6 text-center text-md-start d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-md-start align-items-md-center justify-content-xl-center">
+                    <div style="max-width: 350px;">
+                        
+                        <h1 class="display-5 fw-bold mb-4">OPTICAL RETINAL Classfication</h1>
+                        <p class="text-muted my-4">Enter the OCT image </p>
+
+                            <div class="d-flex"> <form action = "https://seahorse-app-nub7v.ondigitalocean.app/image" method = "post" enctype="multipart/form-data">
+                               
+                                <input type="file" name="image" />
+                                <br>
+
+                                <input   type = "submit" value="Upload" >
+                               
+                            </form></div>
+                    
+                           
+                        <br>
+                        <p>
+                            {% with messages = get_flashed_messages() %}
+                              {% if messages %}
+                                <strong> {{ messages }}
+                                </strong>
+                              {% endif %}
+                            {% endwith %}
+                        </p>
+                    </div>
+                    
+                </div>
+                <div class="col-md-6">
+                    <div><img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr1VTroDxEzcBAZzJYP0Hn46g1piIuZBHW1w&usqp=CAU" height="500" width="500"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+       
+          
+    </section>
+    <footer></footer>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bold-and-bright.js"></script>
+</body>
+
+</html>
