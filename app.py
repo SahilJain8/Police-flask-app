@@ -1,10 +1,5 @@
 from flask import Flask,render_template,request,jsonify,flash,redirect,url_for
-import numpy as np
-import os
-from tensorflow import keras
-import tensorflow as tf
 
-from brain import predbrain
 
 app=Flask(__name__,static_folder="assets")
 
@@ -54,43 +49,6 @@ def monkey():
 @app.route('/Brain tumor.html')
 def brain():
     return render_template('Brain tumor.html')
-
-@app.route('/predection',methods = ['GET','POST'])
-def predection():
-    if request.method=="POST":
-        file=request.files["image"]
-        file.save(file.filename)
-        img=tf.keras.utils.load_img(file.filename)
-        state=pred(img)
-        os.remove(file.filename)
-        flash(str(state))
-
-        return redirect('/contribute.html')
-        
-
-@app.route('/monkeypox',methods = ['GET','POST'])
-def monkeypoxpred():
-    if request.method=="POST":
-        file=request.files["image"]
-        file.save(file.filename)
-        img=tf.keras.utils.load_img(file.filename)
-        state=predmonkey(img)
-        os.remove(file.filename)
-        flash(str(state))
-
-        return redirect('/contribute.html')
-
-@app.route('/braintumor',methods = ['GET','POST'])
-def brainpred():
-    if request.method=="POST":
-        file=request.files["image"]
-        file.save(file.filename)
-        img=tf.keras.utils.load_img(file.filename)
-        state=predbrain(img)
-        os.remove(file.filename)
-        flash(str(state))
-
-        return redirect('/contribute.html')
 
 
 
